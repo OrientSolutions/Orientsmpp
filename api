@@ -1,7 +1,7 @@
 
-ClockWorkSmsService clockWorkSmsService = new ClockWorkSmsService(key);
+OpeSmppService SmppService = new OpeSmppService(key);
 SMS sms = new SMS("441234567890", "Hello World");       
-ClockworkSmsResult result = clockWorkSmsService.send(sms);
+OpeSmppResult result = OpeSmppService.send(sms);
   
 if(result.isSuccess())
 {
