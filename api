@@ -1,0 +1,13 @@
+
+ClockWorkSmsService clockWorkSmsService = new ClockWorkSmsService(key);
+SMS sms = new SMS("441234567890", "Hello World");       
+ClockworkSmsResult result = clockWorkSmsService.send(sms);
+  
+if(result.isSuccess())
+{
+    System.out.println("Sent with ID: " + result.getId());
+}
+else
+{
+    System.out.println("Error: " + result.getErrorMessage());
+}
