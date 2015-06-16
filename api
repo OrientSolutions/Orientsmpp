@@ -1,13 +1,290 @@
 
-OpeSmppService SmppService = new OpeSmppService(key);
-SMS sms = new SMS("441234567890", "Hello World");       
-OpeSmppResult result = OpeSmppService.send(sms);
-  
-if(result.isSuccess())
-{
-    System.out.println("Sent with ID: " + result.getId());
-}
-else
-{
-    System.out.println("Error: " + result.getErrorMessage());
-}
+#%RAML 0.8
+title: "OrientSmpp"
+version: "1.0.0"
+baseUri: "https://orientsolutions.co.tz:443/api"
+schemas: 
+    - 
+        "User": '{"type":"object","title":"User","properties":{"id":{"type":"integer","required":false,"title":"id"},"lastName":{"type":"string","required":false,"title":"lastName"},"userlogin":{"type":"string","required":false,"title":"userlogin"},"phone":{"type":"string","required":false,"title":"phone"},"email":{"type":"string","required":false,"title":"email"},"userStatus":{"type":"integer","required":false,"title":"userStatus"},"firstName":{"type":"string","required":false,"title":"firstName"},"password":{"type":"string","required":false,"title":"password"}}}'
+        "Category": '{"type":"object","title":"Category","properties":{"id":{"type":"integer","required":false,"title":"id"},"name":{"type":"string","required":false,"title":"name"}}}'
+        "Pet": '{"type":"object","title":"Pet","properties":{"tags":{"type":"array","required":false,"title":"tags","items":{"type":"object","$ref":"#/schemas/Tag"},"uniqueItems":false},"id":{"type":"integer","required":true,"title":"id"},"category":{"type":"object","$ref":"#/schemas/Category","required":false,"title":"category"},"status":{"type":"string","required":false,"title":"status"},"name":{"type":"string","required":true,"title":"name"},"photoUrls":{"type":"array","required":false,"title":"photoUrls","items":{"type":"string","title":"photoUrls"},"uniqueItems":false}}}'
+        "Tag": '{"type":"object","title":"Tag","properties":{"id":{"type":"integer","required":false,"title":"id"},"name":{"type":"string","required":false,"title":"name"}}}'
+        "File": '{"type":"object","title":"File"}'
+        "Order": '{"type":"object","title":"Order","properties":{"id":{"type":"integer","required":false,"title":"id"},"petId":{"type":"integer","required":false,"title":"petId"},"status":{"type":"string","required":false,"title":"status"},"quantity":{"type":"integer","required":false,"title":"quantity"},"shipDate":{"type":"string","required":false,"title":"shipDate"}}}'
+securitySchemes: 
+    - 
+"/user/createWithList": 
+    displayName: "CreateUsersWithList"
+    post: 
+        description: "Creates list of users with given list input"
+        body: 
+            "application/json": 
+                schema: "User"
+                example: '[{"id":1,"lastName":"sample lastName","userlogin":"sample userlogin","phone":"sample phone","email":"sample email","userStatus":1,"firstName":"sample firstName","password":"sample password"}]'
+        responses: 
+            "200": 
+                description: "Success"
+"/pet": 
+    displayName: "PetList"
+    post: 
+        description: "Add a new pet to the store"
+        body: 
+            "application/xml": 
+                schema: "Pet"
+                example: "<Pet><id>1</id><category/><status>sample status</status><name>sample name</name><photoUrls>sample photoUrls</photoUrls></Pet>"
+            "text/xml": 
+                schema: "Pet"
+                example: "<Pet><id>1</id><category/><status>sample status</status><name>sample name</name><photoUrls>sample photoUrls</photoUrls></Pet>"
+            "application/json": 
+                schema: "Pet"
+                example: '{"tags":[],"id":1,"category":null,"status":"sample status","name":"sample name","photoUrls":["sample photoUrls"]}'
+        responses: 
+            "405": 
+            "200": 
+                description: "Success"
+    put: 
+        description: "Update an existing pet"
+        body: 
+            "application/xml": 
+                schema: "Pet"
+                example: "<Pet><id>1</id><category/><status>sample status</status><name>sample name</name><photoUrls>sample photoUrls</photoUrls></Pet>"
+            "text/xml": 
+                schema: "Pet"
+                example: "<Pet><id>1</id><category/><status>sample status</status><name>sample name</name><photoUrls>sample photoUrls</photoUrls></Pet>"
+            "application/json": 
+                schema: "Pet"
+                example: '{"tags":[],"id":1,"category":null,"status":"sample status","name":"sample name","photoUrls":["sample photoUrls"]}'
+        responses: 
+            "405": 
+            "404": 
+            "200": 
+                description: "Success"
+            "400": 
+"/store/order/{orderId}": 
+    displayName: "StoreOrder"
+    uriParameters: 
+        "orderId": 
+            displayName: "orderId"
+            description: "ID of the order that needs to be deleted"
+            type: string
+            required: false
+            repeat: false
+    get: 
+        description: "Find purchase order by ID"
+        responses: 
+            "404": 
+                body: 
+                    "application/json": 
+                        example: ""
+            "200": 
+                description: "Success"
+                body: 
+                    "application/json": 
+                        schema: "Order"
+                        example: '{"id":1,"petId":1,"status":"sample status","quantity":1,"shipDate":"sample shipDate"}'
+            "400": 
+                body: 
+                    "application/json": 
+                        example: ""
+    delete: 
+        description: "Delete purchase order by ID"
+        responses: 
+            "404": 
+            "200": 
+                description: "Success"
+            "400": 
+"/user/createWithArray": 
+    displayName: "CreateUsersWithArray"
+    post: 
+        description: "Creates list of users with given input array"
+        body: 
+            "application/json": 
+                schema: "User"
+                example: '[{"id":1,"lastName":"sample lastName","userlogin":"sample userlogin","phone":"sample phone","email":"sample email","userStatus":1,"firstName":"sample firstName","password":"sample password"}]'
+        responses: 
+            "200": 
+                description: "Success"
+"/user/{userlogin}": 
+    displayName: "User"
+    uriParameters: 
+        "userlogin": 
+            displayName: "userlogin"
+            description: "name that need to be deleted"
+            type: string
+            required: false
+            repeat: false
+    get: 
+        description: "Get user by user name"
+        responses: 
+            "404": 
+                body: 
+                    "application/json": 
+                        example: ""
+            "200": 
+                description: "Success"
+                body: 
+                    "application/json": 
+                        schema: "User"
+                        example: '{"id":1,"lastName":"sample lastName","userlogin":"sample userlogin","phone":"sample phone","email":"sample email","userStatus":1,"firstName":"sample firstName","password":"sample password"}'
+            "400": 
+                body: 
+                    "application/json": 
+                        example: ""
+    delete: 
+        description: "Delete user"
+        responses: 
+            "404": 
+            "200": 
+                description: "Success"
+            "400": 
+    put: 
+        description: "Updated user"
+        body: 
+            "application/json": 
+                schema: "User"
+                example: '{"id":1,"lastName":"sample lastName","userlogin":"sample userlogin","phone":"sample phone","email":"sample email","userStatus":1,"firstName":"sample firstName","password":"sample password"}'
+        responses: 
+            "404": 
+            "200": 
+                description: "Success"
+            "400": 
+"/store/order": 
+    displayName: "StoreOrderList"
+    post: 
+        description: "Place an order for a pet"
+        body: 
+            "application/json": 
+                schema: "Order"
+                example: '{"id":1,"petId":1,"status":"sample status","quantity":1,"shipDate":"sample shipDate"}'
+        responses: 
+            "200": 
+                description: "Success"
+            "400": 
+"/pet/findByStatus": 
+    displayName: "FindPetByStatus"
+    get: 
+        description: "Finds Pets by status"
+        queryParameters: 
+            "status": 
+                displayName: "status"
+                description: "Status values that need to be considered for filter"
+                type: string
+                required: true
+                repeat: true
+                default: "available"
+        responses: 
+            "200": 
+                description: "Success"
+                body: 
+                    "application/xml": 
+                        schema: "Pet"
+                        example: "<ArrayList><item><id>1</id><category/><status>sample status</status><name>sample name</name><photoUrls>sample photoUrls</photoUrls></item></ArrayList>"
+                    "text/xml": 
+                        schema: "Pet"
+                        example: "<ArrayList><item><id>1</id><category/><status>sample status</status><name>sample name</name><photoUrls>sample photoUrls</photoUrls></item></ArrayList>"
+                    "application/json": 
+                        schema: "Pet"
+                        example: '[{"tags":[],"id":1,"category":null,"status":"sample status","name":"sample name","photoUrls":["sample photoUrls"]}]'
+            "400": 
+                body: 
+                    "application/xml": 
+                        example: ""
+                    "text/xml": 
+                        example: ""
+                    "application/json": 
+                        example: ""
+"/pet/findByTags": 
+    displayName: "FindPetByTags"
+    get: 
+        description: "Finds Pets by tags"
+        queryParameters: 
+            "tags": 
+                displayName: "tags"
+                description: "Tags to filter by"
+                type: string
+                required: true
+                repeat: true
+        responses: 
+            "200": 
+                description: "Success"
+                body: 
+                    "application/xml": 
+                        schema: "Pet"
+                        example: "<ArrayList><item><id>1</id><category/><status>sample status</status><name>sample name</name><photoUrls>sample photoUrls</photoUrls></item></ArrayList>"
+                    "text/xml": 
+                        schema: "Pet"
+                        example: "<ArrayList><item><id>1</id><category/><status>sample status</status><name>sample name</name><photoUrls>sample photoUrls</photoUrls></item></ArrayList>"
+                    "application/json": 
+                        schema: "Pet"
+                        example: '[{"tags":[],"id":1,"category":null,"status":"sample status","name":"sample name","photoUrls":["sample photoUrls"]}]'
+            "400": 
+                body: 
+                    "application/xml": 
+                        example: ""
+                    "text/xml": 
+                        example: ""
+                    "application/json": 
+                        example: ""
+"/user": 
+    displayName: "UserList"
+    post: 
+        description: "Create user"
+        body: 
+            "application/json": 
+                schema: "User"
+                example: '{"id":1,"lastName":"sample lastName","userlogin":"sample userlogin","phone":"sample phone","email":"sample email","userStatus":1,"firstName":"sample firstName","password":"sample password"}'
+        responses: 
+            "200": 
+                description: "Success"
+"/pet/{petId}": 
+    displayName: "Pet"
+    uriParameters: 
+        "petId": 
+            displayName: "petId"
+            description: "ID of pet that needs to be fetched"
+            type: number
+            required: false
+            repeat: false
+    get: 
+        description: "Find pet by ID"
+        responses: 
+            "404": 
+                body: 
+                    "application/xml": 
+                        example: ""
+                    "text/xml": 
+                        example: ""
+                    "application/json": 
+                        example: ""
+            "200": 
+                description: "Success"
+                body: 
+                    "application/xml": 
+                        schema: "Pet"
+                        example: "<Pet><id>1</id><category/><status>sample status</status><name>sample name</name><photoUrls>sample photoUrls</photoUrls></Pet>"
+                    "text/xml": 
+                        schema: "Pet"
+                        example: "<Pet><id>1</id><category/><status>sample status</status><name>sample name</name><photoUrls>sample photoUrls</photoUrls></Pet>"
+                    "application/json": 
+                        schema: "Pet"
+                        example: '{"tags":[],"id":1,"category":null,"status":"sample status","name":"sample name","photoUrls":["sample photoUrls"]}'
+            "400": 
+                body: 
+                    "application/xml": 
+                        example: ""
+                    "text/xml": 
+                        example: ""
+                    "application/json": 
+                        example: ""
+    post: 
+        description: "Updates a pet in the store with form data"
+        responses: 
+            "405": 
+            "200": 
+                description: "Success"
+    delete: 
+        description: "Deletes a pet"
+        responses: 
+            "200": 
+                description: "Success"
+            "400": 
