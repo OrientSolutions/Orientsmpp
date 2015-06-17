@@ -17,4 +17,4 @@ var server = smpp.createServer(function(session) {
         });
     });
 });
-server.listen(2775);
+server.listen(6699);
