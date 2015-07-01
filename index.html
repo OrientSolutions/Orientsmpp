@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Orientsmpp by OrientSolutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Orientsmpp</h1>
+      <h2 class="project-tagline">A simple smpp Protocol and its core api for developers</h2>
+      <a href="https://github.com/OrientSolutions/Orientsmpp" class="btn">View on GitHub</a>
+      <a href="https://github.com/OrientSolutions/Orientsmpp/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/OrientSolutions/Orientsmpp/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="welcome-to-orientsolutions-limited" class="anchor" href="#welcome-to-orientsolutions-limited" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to OrientSolutions Limited.</h3>
+
+<p>If you are going to build your own applications and your requirement is Bulksms , BrandedSMS , Masked SMS and You need a super fast response and better grip in your application then our php Rest API is very advance and good.</p>
+
+<p>http     /     Php     /     json    /     xml    /     C#    /     .NET    /     java    </p>
+
+<p>Delivery Reports     /     Pre-built Libraries     /     Readymade SMS Sending Script</p>
+
+<p> 
+Our Docs are such friendly that a normal user can also integrate API with out having deep Developer knowledge. Our Rest api is best choice for international SMS.</p>
+
+<h3>
+<a id="base-url" class="anchor" href="#base-url" aria-hidden="true"><span class="octicon octicon-link"></span></a>Base URL</h3>
+
+<p><a href="http://orientsolutions.co.tz/api">http://orientsolutions.co.tz/api</a>?</p>
+
+<p>$$ Php Script 
+&lt;?php
+$username = 'username';
+$password = 'password';
+$to = '44xxxxxxxx';
+$from = 'Brand';
+$message = 'Test SMS from orientsolutions.co.tz';
+$url = "<a href="http://orientsolutions.co.tz/plain?username=%22.%24username.%22&amp;password=%22.%24password">http://orientsolutions.co.tz/plain?username=".$username."&amp;password=".$password</a>.
+"&amp;to=".$to."&amp;from=".urlencode($from)."&amp;message=".urlencode($message)." ";
+//Curl Start
+$ch  =  curl_init();
+$timeout  =  30;
+curl_setopt ($ch,CURLOPT_URL, $url) ;
+curl_setopt ($ch,CURLOPT_RETURNTRANSFER, 1);
+curl_setopt ($ch,CURLOPT_CONNECTTIMEOUT, $timeout) ;
+$response = curl_exec($ch) ;
+curl_close($ch) ; 
+//Write out the response
+echo $response ;</p>
+
+<p>?&gt;</p>
+
+<h3>
+<a id="simple-intergration" class="anchor" href="#simple-intergration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Intergration</h3>
+
+<p>Please note: All Required Fields are compulsory! Your Request Can Not move Forward without Required Fields</p>
+
+<p>Information About Parameters</p>
+
+<p>PARAMETERS
+ username     Your Login Username of LifetimeSMS  (Required).
+ password  Your Login Password of LifetimeSMS  (Required).
+ to    Recepient Mobile Number  (Required).
+ from  Your company Name/Brand Name like "xyz" Displayed of Recepient mobile  (Required).
+ type  type=unicode FOR unicode SMS    (OPTIONAL).
+ date  dd-mm-YYYY     Example:25-02-2014 (OPTIONAL)
+ time  hh:mm:ss     Example:21:30:55 (OPTIONAL)
+ message   The Message For Recepient  (Required).
+Return Response and their Meanings</p>
+
+<p>RETURN VALUES
+ OK    The message was successfully accepted for delivery by LifeTimesms.
+-1  Your request is incomplete and missing some mandatory parameters.
+-2  Invalid Recipient Number.
+-3  Sender ID cant Be Greater Than 11 Characters.
+-4  The Username or Password you supplied is either invalid or disabled or blocked.
+-5  Message Length Cant Be exceeded Than 612 Characters.
+-6  Balance Error.
+-7  SMS Rejected Due to spam Filters.
+-8  too many Recepients are Supplied
+-9  Unknow error (contact with Department).
+-10 Service Down.
+-11 Invalid Date For Schedule.
+ </p>
+
+<p>Note: You can Explod Successfull Result by delemeter Collan (:) . First Param for outPut and second to trace Delivery.</p>
+
+<p>Successfull Out Put Response</p>
+
+<p>OK:40000456852
+ </p>
+
+<p> </p>
+
+<p>Send SMS Via Plain API ?</p>
+
+<p>Below simple HTTP GET / POST METHOD example is given. Please Click on it to check api interferace</p>
+
+<p><a href="http://orientsolutions.co.tz/plain?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;message=this+is+plain+api">http://orientsolutions.co.tz/plain?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;message=this+is+plain+api</a>.</p>
+
+<p> </p>
+
+<p> </p>
+
+<p>Scheduled SMS For Future Reservation?</p>
+
+<p><a href="http://orientsolutions.co.tz/plain?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;date=21-05-2016&amp;time=21:30:50&amp;message=this+is+plain+api">http://orientsolutions.co.tz/plain?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;date=21-05-2016&amp;time=21:30:50&amp;message=this+is+plain+api</a>.</p>
+
+<p> </p>
+
+<p> </p>
+
+<h2>
+<a id="balance-inquiry" class="anchor" href="#balance-inquiry" aria-hidden="true"><span class="octicon octicon-link"></span></a>Balance Inquiry</h2>
+
+<p><a href="http://orientsolutions.co.tz/credit?username=xxxx&amp;password=xxxx">http://orientsolutions.co.tz/credit?username=xxxx&amp;password=xxxx</a></p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Our Api Check out our <a href="https://help.orientsolutions.co.tz/doc">documentation</a> or <a href="https://orientsolutions.co.tz/contact">contact support</a> and we’ll help you sort it out.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/OrientSolutions/Orientsmpp">Orientsmpp</a> is maintained by <a href="https://github.com/OrientSolutions">OrientSolutions</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
