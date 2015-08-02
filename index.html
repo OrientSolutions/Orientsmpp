@@ -1,44 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Orient Solutions Tanzania Limited by OrientSolutions</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=640">
 
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Orient Solutions Tanzania Limited by OrientSolutions</title>
   </head>
+
   <body>
+    <a id="forkme_banner" href="https://github.com/OrientSolutions/Orientsmpp">View on GitHub</a>
+    <div class="shell">
 
       <header>
-        <h1>Orient Solutions Tanzania Limited</h1>
-        <p>A simple smpp Protocol and its core api for developers</p>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Orient Solutions Tanzania Limited</h1>
+            <h2>A simple smpp Protocol and its core api for developers</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
       </header>
 
-      <div id="banner">
-        <span id="logo"></span>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/OrientSolutions/Orientsmpp/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/OrientSolutions/Orientsmpp/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-        <a href="https://github.com/OrientSolutions/Orientsmpp" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/OrientSolutions/Orientsmpp/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/OrientSolutions/Orientsmpp/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
 
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
         <h3>
 <a id="welcome-to-orientsolutions--limited" class="anchor" href="#welcome-to-orientsolutions--limited" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to OrientSolutions  Limited.</h3>
 
@@ -54,16 +61,17 @@ Our Docs are such friendly that a normal user can also integrate API with out ha
 <h3>
 <a id="base-url" class="anchor" href="#base-url" aria-hidden="true"><span class="octicon octicon-link"></span></a>Base URL</h3>
 
-<p><a href="http://Orientsolutions.co.tz.com/api">http://Orientsolutions.co.tz.com/api</a>?</p>
+<p><a href="http://Orientsolutions.co.tz/api">http://Orientsolutions.co.tz/api</a>?</p>
 
-<p>$$ Php Script 
-&lt;?php
+<p>$$ Php Script </p>
+
+<p>&lt;?php
 $username = 'username';
 $password = 'password';
-$to = '44xxxxxxxx';
+$to = '255xxxxxxxx';
 $from = 'Brand';
-$message = 'Test SMS from Orientsolutions.co.tz.com';
-$url = "<a href="http://Orientsolutions.co.tz.com/api?username=%22.%24username.%22&amp;password=%22.%24password">http://Orientsolutions.co.tz.com/api?username=".$username."&amp;password=".$password</a>.
+$message = 'Test SMS from Orientsolutions.co.tz';
+$url = "<a href="http://Orientsolutions.co.tz/api?username=%22.%24username.%22&amp;password=%22.%24password">http://Orientsolutions.co.tz/api?username=".$username."&amp;password=".$password</a>.
 "&amp;to=".$to."&amp;from=".urlencode($from)."&amp;message=".urlencode($message)." ";
 //Curl Start
 $ch  =  curl_init();
@@ -77,42 +85,6 @@ curl_close($ch) ;
 echo $response ;</p>
 
 <p>?&gt;</p>
-
-<p>How to Make a Website</p>
-
-<p>CSS Basics</p>
-
-<p>JavaScript Basics</p>
-
-<p>HTML Forms</p>
-
-<p>JavaScript Loops, Arrays and Objects</p>
-
-<p>jQuery Basics</p>
-
-<p>HTML Tables</p>
-
-<p>Interactive Web Pages with JavaScript
-0/3 
-HTML Video and Audio
-0/3 
-Responsive Layouts
-0/4 
-AJAX Basics
-0/4 
-Object-Oriented JavaScript
-0/3 
-Accessibility
-0/1 
-Website Optimization
-0/5 
-Console Foundations
-0/6 
-Git Basics
-0/4 
-Front End Performance Optimization</p>
-
-<p>Track Completion</p>
 
 <h3>
 <a id="simple-intergration" class="anchor" href="#simple-intergration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Intergration</h3>
@@ -147,11 +119,11 @@ Return Response and their Meanings</p>
 -11 Invalid Date For Schedule.
  </p>
 
-<p>Note: You can Explod Successfull Result by delemeter Collan (:) . First Param for outPut and second to trace Delivery.</p>
+<p>Note: You can Explod Successfull Result by Mark Fr (:) . First Param for outPut and second to trace Delivery.</p>
 
 <p>Successfull Out Put Response</p>
 
-<p>OK:40000456852
+<p>OK:0766250000
  </p>
 
 <p> </p>
@@ -160,7 +132,7 @@ Return Response and their Meanings</p>
 
 <p>Below simple HTTP GET / POST METHOD example is given. Please Click on it to check api interferace</p>
 
-<p><a href="http://Orientsolutions.co.tz.com/api?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;message=this+is+api+api">http://Orientsolutions.co.tz.com/api?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;message=this+is+api+api</a>.</p>
+<p><a href="http://Orientsolutions.co.tz/api?username=xxxx&amp;password=xxxx&amp;to=255xxxxxxx&amp;from=Brand&amp;message=this+is+api+api">http://Orientsolutions.co.tz/api?username=xxxx&amp;password=xxxx&amp;to=255xxxxxxx&amp;from=Brand&amp;message=this+is+api+api</a>.</p>
 
 <p> </p>
 
@@ -168,7 +140,7 @@ Return Response and their Meanings</p>
 
 <p>Scheduled SMS For Future Reservation?</p>
 
-<p><a href="http://Orientsolutions.co.tz.com/api?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;date=21-05-2016&amp;time=21:30:50&amp;message=this+is+api+api">http://Orientsolutions.co.tz.com/api?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;date=21-05-2016&amp;time=21:30:50&amp;message=this+is+api+api</a>.</p>
+<p><a href="http://Orientsolutions.co.tz/api?username=xxxx&amp;password=xxxx&amp;to=255xxxxxxx&amp;from=Brand&amp;date=21-05-2016&amp;time=21:30:50&amp;message=this+is+api+api">http://Orientsolutions.co.tz/api?username=xxxx&amp;password=xxxx&amp;to=255xxxxxxx&amp;from=Brand&amp;date=21-05-2016&amp;time=21:30:50&amp;message=this+is+api+api</a>.</p>
 
 <p> </p>
 
@@ -177,19 +149,28 @@ Return Response and their Meanings</p>
 <h2>
 <a id="balance-inquiry" class="anchor" href="#balance-inquiry" aria-hidden="true"><span class="octicon octicon-link"></span></a>Balance Inquiry</h2>
 
-<p><a href="http://Orientsolutions.co.tz.com/credit?username=xxxx&amp;password=xxxx">http://Orientsolutions.co.tz.com/credit?username=xxxx&amp;password=xxxx</a></p>
+<p><a href="http://Orientsolutions.co.tz/credit?username=xxxx&amp;password=xxxx">http://Orientsolutions.co.tz/credit?username=xxxx&amp;password=xxxx</a></p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Our Api Check out our <a href="https://Orientsolutions.co.tz.com/support">documentation</a> or <a href="http://Orientsolutions.co.tz.com/contact">contact support</a> and we’ll help you sort it</p>
+<p>Having trouble with Our Api Check out our <a href="https://Orientsolutions.co.tz/support">documentation</a> or <a href="http://Orientsolutions.co.tz/contact">contact support</a> and we’ll help you sort it</p>
       </section>
+
       <footer>
-        <p>Project maintained by <a href="https://github.com/OrientSolutions">OrientSolutions</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/OrientSolutions">OrientSolutions</a> can be found on <a href="https://github.com/OrientSolutions/Orientsmpp">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
       </footer>
+
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
     
   </body>
 </html>
