@@ -1,35 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Orient Solutions Tanzania Limited by OrientSolutions</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <title>HighRides Tanzania Limited by OrientSolutions</title>
   </head>
-
   <body>
 
-    <header>
-      <div class="container">
-        <h1>HighRides Tanzania Limited</h1>
-        <h2>A simple smpp Protocol and its core api for developers</h2>
+      <header>
+        <h1>Orient Solutions Tanzania Limited</h1>
+        <p>A simple smpp Protocol and its core api for developers</p>
+      </header>
 
-        <section id="downloads">
-          <a href="https://github.com/OrientSolutions/Orientsmpp/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/OrientSolutions/Orientsmpp/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/OrientSolutions/Orientsmpp" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+      <div id="banner">
+        <span id="logo"></span>
 
-    <div class="container">
-      <section id="main_content">
+        <a href="https://github.com/OrientSolutions/Orientsmpp" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/OrientSolutions/Orientsmpp/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/OrientSolutions/Orientsmpp/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
         <h3>
-<a id="welcome-to-highridestz-limited" class="anchor" href="#welcome-to-highridestz-limited" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to highridestz Limited.</h3>
+<a id="welcome-to-orientsolutions--limited" class="anchor" href="#welcome-to-orientsolutions--limited" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to OrientSolutions  Limited.</h3>
 
 <p>If you are going to build your own applications and your requirement is Bulksms , BrandedSMS , Masked SMS and You need a super fast response and better grip in your application then our php Rest API is very advance and good.</p>
 
@@ -43,7 +54,7 @@ Our Docs are such friendly that a normal user can also integrate API with out ha
 <h3>
 <a id="base-url" class="anchor" href="#base-url" aria-hidden="true"><span class="octicon octicon-link"></span></a>Base URL</h3>
 
-<p><a href="http://highridestz.com/api">http://highridestz.com/api</a>?</p>
+<p><a href="http://Orientsolutions.co.tz.com/api">http://Orientsolutions.co.tz.com/api</a>?</p>
 
 <p>$$ Php Script 
 &lt;?php
@@ -51,8 +62,8 @@ $username = 'username';
 $password = 'password';
 $to = '44xxxxxxxx';
 $from = 'Brand';
-$message = 'Test SMS from highridestz.com';
-$url = "<a href="http://highridestz.com/plain?username=%22.%24username.%22&amp;password=%22.%24password">http://highridestz.com/plain?username=".$username."&amp;password=".$password</a>.
+$message = 'Test SMS from Orientsolutions.co.tz.com';
+$url = "<a href="http://Orientsolutions.co.tz.com/api?username=%22.%24username.%22&amp;password=%22.%24password">http://Orientsolutions.co.tz.com/api?username=".$username."&amp;password=".$password</a>.
 "&amp;to=".$to."&amp;from=".urlencode($from)."&amp;message=".urlencode($message)." ";
 //Curl Start
 $ch  =  curl_init();
@@ -111,8 +122,8 @@ Front End Performance Optimization</p>
 <p>Information About Parameters</p>
 
 <p>PARAMETERS
- username     Your Login Username of highridestz  (Required).
- password  Your Login Password of highridestz  (Required).
+ username     Your Login Username of Orientsolutions.co.tz  (Required).
+ password  Your Login Password of Orientsolutions.co.tz  (Required).
  to    Recepient Mobile Number  (Required).
  from  Your company Name/Brand Name like "xyz" Displayed of Recepient mobile  (Required).
  type  type=unicode FOR unicode SMS    (OPTIONAL).
@@ -122,7 +133,7 @@ Front End Performance Optimization</p>
 Return Response and their Meanings</p>
 
 <p>RETURN VALUES
- OK    The message was successfully accepted for delivery by highridestz.
+ OK    The message was successfully accepted for delivery by Orientsolutions.co.tz.
 -1  Your request is incomplete and missing some mandatory parameters.
 -2  Invalid Recipient Number.
 -3  Sender ID cant Be Greater Than 11 Characters.
@@ -145,11 +156,11 @@ Return Response and their Meanings</p>
 
 <p> </p>
 
-<p>Send SMS Via Plain API ?</p>
+<p>Send SMS Via api API ?</p>
 
 <p>Below simple HTTP GET / POST METHOD example is given. Please Click on it to check api interferace</p>
 
-<p><a href="http://highridestz.com/plain?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;message=this+is+plain+api">http://highridestz.com/plain?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;message=this+is+plain+api</a>.</p>
+<p><a href="http://Orientsolutions.co.tz.com/api?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;message=this+is+api+api">http://Orientsolutions.co.tz.com/api?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;message=this+is+api+api</a>.</p>
 
 <p> </p>
 
@@ -157,7 +168,7 @@ Return Response and their Meanings</p>
 
 <p>Scheduled SMS For Future Reservation?</p>
 
-<p><a href="http://highridestz.com/plain?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;date=21-05-2016&amp;time=21:30:50&amp;message=this+is+plain+api">http://highridestz.com/plain?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;date=21-05-2016&amp;time=21:30:50&amp;message=this+is+plain+api</a>.</p>
+<p><a href="http://Orientsolutions.co.tz.com/api?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;date=21-05-2016&amp;time=21:30:50&amp;message=this+is+api+api">http://Orientsolutions.co.tz.com/api?username=xxxx&amp;password=xxxx&amp;to=44xxxxxxx&amp;from=Brand&amp;date=21-05-2016&amp;time=21:30:50&amp;message=this+is+api+api</a>.</p>
 
 <p> </p>
 
@@ -166,15 +177,19 @@ Return Response and their Meanings</p>
 <h2>
 <a id="balance-inquiry" class="anchor" href="#balance-inquiry" aria-hidden="true"><span class="octicon octicon-link"></span></a>Balance Inquiry</h2>
 
-<p><a href="http://highridestz.com/credit?username=xxxx&amp;password=xxxx">http://highridestz.com/credit?username=xxxx&amp;password=xxxx</a></p>
+<p><a href="http://Orientsolutions.co.tz.com/credit?username=xxxx&amp;password=xxxx">http://Orientsolutions.co.tz.com/credit?username=xxxx&amp;password=xxxx</a></p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Our Api Check out our <a href="https://help.highridestz.com/">documentation</a> or <a href="http://highridestz.com/contact">contact support</a> and we’ll help you sort it out.* </p>
+<p>Having trouble with Our Api Check out our <a href="https://Orientsolutions.co.tz.com/support">documentation</a> or <a href="http://Orientsolutions.co.tz.com/contact">contact support</a> and we’ll help you sort it</p>
       </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/OrientSolutions">OrientSolutions</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
